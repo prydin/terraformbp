@@ -13,7 +13,7 @@ variable "myTag" {
   default = "terraform-test"
 }
 
-varible "delay" {
+variable "delay" {
   description = "Delay"
   default = "3600"
 }
