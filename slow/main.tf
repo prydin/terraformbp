@@ -13,6 +13,11 @@ variable "myTag" {
   default = "terraform-test"
 }
 
+varible "delay" {
+  description = "Delay"
+  default = "3600"
+}
+
 resource "aws_instance" "machine1" {
     ami           = "ami-0a63cd87767e10ed4"
     instance_type = "t2.micro"
@@ -30,7 +35,7 @@ resource "aws_instance" "machine2" {
       "type" = var.myTag
     }
     provisioner "local-exec" {
-        command = "echo 'Taking a nap'; sleep 30"
+        command = "echo 'Taking a nap'; sleep ${var.delay}"
     }
 }
 
