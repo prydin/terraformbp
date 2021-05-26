@@ -29,7 +29,7 @@ resource "aws_instance" "machine1" {
     "type" = var.myTag
   }
   provisioner "local-exec" {
-    command = "python3 -c print('Python is accessible from resource provisioning!')"
+    command = "python3 -c 'print(\"Python is accessible from resource provisioning!\")'"
  }
   depends_on = [ null_resource.install_python ]
 }
