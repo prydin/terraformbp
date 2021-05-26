@@ -21,6 +21,6 @@ resource "aws_instance" "machine1" {
       "type" = var.myTag
     }
     provisioner "local-exec" {
-	command = "apt instally python3"
+	command = "apk add --no-cache python3 py3-pip; apt install python3"
   }
 }
